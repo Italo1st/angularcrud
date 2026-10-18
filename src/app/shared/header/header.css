@@ -1,0 +1,129 @@
+.header {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.header__container {
+  max-width: 1080px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.header__logo-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--accent);
+}
+
+/* Textos do menu */
+.header__nav {
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__item {
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;                       /* hover */
+  transition: color 0.2s ease;           /* hover */
+}
+
+.header__item:hover {                    /* hover */
+  color: var(--accent);
+}
+
+/* "Cadastre-se" em destaque */
+.header__item--highlight {
+  padding: 6px 16px;
+  border: 1.5px solid var(--accent);
+  border-radius: 99px;
+  color: var(--accent);
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;   /* hover */
+}
+
+.header__item--highlight:hover {         /* hover */
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Carrinho */
+.header__cart {
+  position: relative;
+  padding: 6px;
+  cursor: pointer;                       /* hover */
+  transition: color 0.2s ease;           /* hover */
+}
+
+.header__cart:hover {                    /* hover */
+  color: var(--accent);
+}
+
+.header__cart-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.header__badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 99px;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .header__logo-text {
+    display: none;
+  }
+
+  .header__nav {
+    margin-right: 12px;
+  }
+
+  .header__list {
+    gap: 14px;
+  }
+
+  .header__item {
+    font-size: 0.85rem;
+  }
+
+  .header__item--highlight {
+    padding: 4px 10px;
+  }
+}

@@ -1,0 +1,15 @@
+.footer {
+  background: var(--primary);
+  color: #C9D2E6;
+}
+
+.footer__container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 0.82rem;
+}
