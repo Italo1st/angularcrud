@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
 
 :root {
   --primary: #14284B;
   --on-primary: #ffffff;
   --accent: #C9A24B;
   --on-accent: #14284B;
+  --text: #1B2235;
+  --muted: #5B6475;
+  --line: #E1E4EA;
+  --bg-alt: #F3F4F6;
+  --danger: #B3261E;
 }
 
 body {
   margin: 0;
   font-family: Inter, Roboto, Arial, sans-serif;
+  color: var(--text);
 }
 
 app-root {
@@ -25,4 +31,155 @@ app-footer {
 
 app-footer {
   margin-top: auto;
+}
+
+/* ---------- Estrutura das páginas ---------- */
+.pagina {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.pagina__titulo {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.pagina__titulo::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.pagina__subtitulo {
+  margin: 12px 0 32px;
+  color: var(--muted);
+}
+
+.secao__titulo {
+  margin: 40px 0 16px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  padding: 12px 24px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.botao:hover {
+  filter: brightness(1.08);
+}
+
+.botao--pequeno {
+  padding: 9px 16px;
+  font-size: 0.9rem;
+}
+
+.botao--secundario {
+  color: var(--text);
+  background: transparent;
+  border: 1.5px solid var(--line);
+}
+
+.botao--perigo {
+  color: var(--danger);
+  background: transparent;
+  border: 1.5px solid var(--danger);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Formulários ---------- */
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: end;
+  padding: 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-simples {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.input-simples:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ---------- Tabelas ---------- */
+.tabela-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabela th,
+.tabela td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.tabela th {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--on-primary);
+  background: var(--primary);
+}
+
+.tabela tbody tr:hover {
+  background: var(--bg-alt);
+}
+
+.vazio {
+  padding: 24px 0;
+  color: var(--muted);
 }

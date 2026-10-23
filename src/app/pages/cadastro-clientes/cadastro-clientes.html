@@ -1,0 +1,64 @@
+<section class="pagina">
+  <h1 class="pagina__titulo">Cadastro de clientes</h1>
+  <p class="pagina__subtitulo">Inclua, altere, consulte e exclua clientes.</p>
+
+  <form class="formulario">
+    <div class="campo">
+      <label for="nome">Nome</label>
+      <input class="input-simples" id="nome" name="nome" type="text"
+             placeholder="Nome completo" />
+    </div>
+
+    <div class="campo">
+      <label for="email">E-mail (será o login)</label>
+      <input class="input-simples" id="email" name="email" type="text"
+             placeholder="voce@email.com" />
+    </div>
+
+    <div class="campo">
+      <label for="telefone">Telefone</label>
+      <input class="input-simples" id="telefone" name="telefone" type="text"
+             placeholder="(11) 90000-0000" />
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha</label>
+      <input class="input-simples" id="senha" name="senha" type="password"
+             placeholder="Crie uma senha" />
+    </div>
+
+    <div class="acoes">
+      <button class="botao" type="button">Adicionar</button>
+    </div>
+  </form>
+
+  <h2 class="secao__titulo">Clientes cadastrados</h2>
+
+  <div class="tabela-wrap">
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail (login)</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (cliente of clientes; track cliente.id) {
+          <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>
+              <div class="acoes">
+                <button class="botao botao--pequeno botao--secundario" type="button">Editar</button>
+                <button class="botao botao--pequeno botao--perigo" type="button">Excluir</button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
