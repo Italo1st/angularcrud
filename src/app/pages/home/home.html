@@ -1,1 +1,47 @@
-<h1>{{titulo}}</h1>
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__texto">
+      <h1 class="hero__titulo">Sua visão com estilo e clareza</h1>
+      <p class="hero__subtitulo">
+        Armações selecionadas, lentes de qualidade e atendimento que cuida de cada detalhe do seu olhar.
+      </p>
+      <span class="botao">Ver catálogo</span>
+    </div>
+
+    <svg class="hero__arte" viewBox="0 0 320 140" fill="none"
+         stroke="currentColor" stroke-width="7" stroke-linecap="round" aria-hidden="true">
+      <rect x="12" y="30" width="118" height="84" rx="34" />
+      <rect x="190" y="30" width="118" height="84" rx="34" />
+      <path d="M130 62q30-22 60 0" />
+    </svg>
+  </div>
+</section>
+
+<section class="pagina">
+  <h2 class="pagina__titulo">Nossos produtos</h2>
+  <p class="pagina__subtitulo">Óculos de grau e de sol para cada estilo.</p>
+
+  <div class="vitrine">
+    @for (produto of produtos; track produto.id) {
+      <article class="card">
+        <div class="card__imagem">
+          <svg class="card__icone" viewBox="0 0 120 70" fill="none"
+               stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+               aria-hidden="true">
+            <circle cx="28" cy="35" r="20" />
+            <circle cx="92" cy="35" r="20" />
+            <path d="M48 33q12-8 24 0" />
+          </svg>
+        </div>
+        <div class="card__corpo">
+          <h3 class="card__nome">{{ produto.nome }}</h3>
+          <span class="card__categoria">{{ produto.getCategoriaTexto() }}</span>
+          <p class="card__preco">{{ produto.getPrecoFormatado() }}</p>
+          <button class="botao botao--pequeno" type="button" (click)="comprar(produto)">
+            Comprar
+          </button>
+        </div>
+      </article>
+    }
+  </div>
+</section>

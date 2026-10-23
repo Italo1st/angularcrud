@@ -1,0 +1,30 @@
+<section class="pagina">
+  <h1 class="pagina__titulo">Seu carrinho</h1>
+  <p class="pagina__subtitulo">Confira os itens antes de finalizar.</p>
+
+  @if (itens.length === 0) {
+    <p class="vazio">Seu carrinho está vazio.</p>
+  }
+
+  @for (produto of itens; track produto.id) {
+    <div class="item">
+      <div class="item__info">
+        <strong class="item__nome">{{ produto.nome }}</strong>
+        <span class="item__categoria">{{ produto.getCategoriaTexto() }}</span>
+      </div>
+      <strong class="item__preco">{{ produto.getPrecoFormatado() }}</strong>
+      <button class="botao botao--pequeno botao--perigo" type="button"
+              (click)="remover(produto)">Remover</button>
+    </div>
+  }
+
+  <div class="total">
+    <span>Total</span>
+    <span>{{ getTotalFormatado() }}</span>
+  </div>
+
+  <div class="acoes">
+    <a class="botao botao--secundario" routerLink="/">Continuar comprando</a>
+    <button class="botao" type="button" (click)="finalizar()">Finalizar compra</button>
+  </div>
+</section>

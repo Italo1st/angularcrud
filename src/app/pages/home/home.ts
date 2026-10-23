@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
+import { Produto } from '../../models/produto';
+import { PRODUTOS, CARRINHO } from '../../data/dados';
 
 @Component({
-  imports: [],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
 export class Home {
-  titulo: string = " Bem vindos ao lume ";
+  produtos = PRODUTOS;
+
+  comprar(produto: Produto): void {
+    if (CARRINHO.includes(produto)) {
+      alert('Este produto já está no carrinho.');
+      return;
+    }
+    CARRINHO.push(produto);
+  }
 }

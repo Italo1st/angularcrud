@@ -13,13 +13,15 @@
 
     <nav class="header__nav" aria-label="Principal">
       <ul class="header__list">
-        <li class="header__item">Início</li>
-        <li class="header__item">Sobre</li>
-        <li class="header__item header__item--highlight">Cadastre-se</li>
+        @for (item of itensMenu; track item) {
+          <li class="header__item" routerLink="{{item.link}}">
+            <a>{{item.label}}</a>
+          </li>
+        }
       </ul>
     </nav>
 
-    <div class="header__cart">
+    <div class="header__cart" routerLink="/Carrinho">
       <svg class="header__cart-icon" viewBox="0 0 24 24" fill="none"
            stroke="currentColor" stroke-width="2" stroke-linecap="round"
            stroke-linejoin="round" aria-hidden="true">

@@ -1,0 +1,59 @@
+<section class="pagina">
+  <h1 class="pagina__titulo">Cadastro de produtos</h1>
+  <p class="pagina__subtitulo">Inclua, altere, consulte e exclua produtos.</p>
+
+  <form class="formulario">
+    <div class="campo">
+      <label for="nome">Nome</label>
+      <input class="input-simples" id="nome" name="nome" type="text"
+             placeholder="Ex.: Clássico Redondo" />
+    </div>
+
+    <div class="campo">
+      <label for="categoria">Categoria</label>
+      <select class="input-simples" id="categoria" name="categoria">
+        <option value="grau">Óculos de grau</option>
+        <option value="sol">Óculos de sol</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="preco">Preço (R$)</label>
+      <input class="input-simples" id="preco" name="preco" type="number" />
+    </div>
+
+    <div class="acoes">
+      <button class="botao" type="button">Adicionar</button>
+    </div>
+  </form>
+
+  <h2 class="secao__titulo">Produtos cadastrados</h2>
+
+  <div class="tabela-wrap">
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (produto of produtos; track produto.id) {
+          <tr>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.getCategoriaTexto() }}</td>
+            <td>{{ produto.getPrecoFormatado() }}</td>
+            <td>
+              <div class="acoes">
+                <button class="botao botao--pequeno botao--secundario" type="button">Editar</button>
+                <button class="botao botao--pequeno botao--perigo" type="button">Excluir</button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

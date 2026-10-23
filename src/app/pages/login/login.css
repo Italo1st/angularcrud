@@ -1,11 +1,23 @@
+:host {
+  display: block;
+}
+
 .content-container {
   max-width: 420px;
   margin: 56px auto;
   padding: 32px 28px;
   background: #ffffff;
-  border: 1px solid #E1E4EA;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(20, 40, 75, 0.08);
+}
+
+.login__titulo {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
 }
 
 .content-container form {
@@ -22,34 +34,14 @@
   margin-bottom: 6px;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #1B2235;
+  color: var(--text);
 }
 
 .input-simples {
-  width: 100%;
-  padding: 12px 14px;
   margin-bottom: 20px;
-  font: inherit;
-  font-size: 0.95rem;
-  color: #1B2235;
-  background: #ffffff;
-  border: 1.5px solid #E1E4EA;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.input-simples::placeholder {
-  color: #8A93A5;
-}
-
-.input-simples:hover {
-  border-color: #C9D2E6;
 }
 
 .input-simples:focus {
-  outline: none;
-  border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.25);
 }
 
@@ -65,21 +57,28 @@
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  transition: filter 0.2s ease, transform 0.1s ease;
 }
 
 .input-submeter:hover:not(:disabled) {
   filter: brightness(1.08);
 }
 
-.input-submeter:active:not(:disabled) {
-  transform: translateY(1px);
-}
-
 .input-submeter:disabled {
-  background: #E1E4EA;
+  background: var(--line);
   color: #8A93A5;
   cursor: not-allowed;
+}
+
+.login__link {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.login__link a {
+  font-weight: 600;
+  color: var(--primary);
 }
 
 @media (max-width: 480px) {

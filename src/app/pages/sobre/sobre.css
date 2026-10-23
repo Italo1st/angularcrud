@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.sobre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobre__texto p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.sobre__lista {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.9;
+}
+
+.sobre__destaque {
+  padding: 32px;
+  color: var(--on-primary);
+  background: var(--primary);
+  border-bottom: 4px solid var(--accent);
+  border-radius: 14px;
+}
+
+.sobre__numero {
+  display: block;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .sobre {
+    grid-template-columns: 1fr;
+  }
+}
