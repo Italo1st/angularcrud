@@ -1,0 +1,17 @@
+{
+  "produtos": [
+    {
+      "nome": "Aviador Dourado",
+      "categoria": "sol",
+      "preco": 500,
+      "id": "2"
+    },
+    {
+      "nome": "ruim",
+      "categoria": "sol",
+      "preco": 1,
+      "id": "vB8QDyv3QYU"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
