@@ -22,7 +22,7 @@
   <p class="pagina__subtitulo">Óculos de grau e de sol para cada estilo.</p>
 
   <div class="vitrine">
-    @for (produto of produtos; track produto.id) {
+    @for (produto of produtos(); track produto.id) {
       <article class="card">
         <div class="card__imagem">
           <svg class="card__icone" viewBox="0 0 120 70" fill="none"
